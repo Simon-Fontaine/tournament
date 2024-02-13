@@ -1,4 +1,4 @@
-import '@/styles/globals.css';
+import '@/app/ui/globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>{children}</body>

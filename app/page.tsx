@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col p-6">
+    <main>
       <div>
         <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h1>
         <p>

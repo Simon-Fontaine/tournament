@@ -1,16 +1,16 @@
-import prisma from '@/lib/prisma';
+import prisma from '@/app/lib/prisma';
 import { type NextRequest } from 'next/server';
 
 export async function GET(request: NextRequest) {
   try {
-    const teamId = request.nextUrl.searchParams.get('id');
+    const teamName = request.nextUrl.searchParams.get('name');
 
-    if (!teamId) {
-      return Response.json({ error: 'No team id provided' }, { status: 400 });
+    if (!teamName) {
+      return Response.json({ error: 'No team name provided' }, { status: 400 });
     }
 
     const team = await prisma.team.findUnique({
-      where: { id: teamId },
+      where: { name: teamName },
     });
 
     if (!team) {
