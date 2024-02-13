@@ -36,8 +36,18 @@ async function main() {
     update: {},
     create: {
       email: 'guillaume.ladriere@example.com',
-      username: 'guignaume',
+      username: 'guignome',
       avatarUrl: 'https://cdn.discordapp.com/embed/avatars/3.png',
+    },
+  });
+
+  const maxime = await prisma.user.upsert({
+    where: { email: 'maxime.bongartz@example.com' },
+    update: {},
+    create: {
+      email: 'maxime.bongartz@example.com',
+      username: 'max',
+      avatarUrl: 'https://cdn.discordapp.com/embed/avatars/4.png',
     },
   });
 
@@ -87,6 +97,7 @@ async function main() {
     timothy,
     bastien,
     guillaume,
+    maxime,
     teamOne,
     teamTwo,
     teamThree,
